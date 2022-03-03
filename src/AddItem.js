@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function AddItem({ onAdd }) {
   const [nameen, setNameen] = useState('');
   return (
-    <section>
+    <section className='addSection'>
       <input
         placeholder='Add article'
         value={nameen}
