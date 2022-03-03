@@ -8,11 +8,15 @@
   width: 100%;
 }
 
-.shopping-list__item {
-  background-color: tomato;
+.shopping-list__item button {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #ff6eff;
+  border: none;
+  color: white;
 }
 
-.shopping-list__item button {
-  height: auto;
-  width: auto;
+.shopping-list button:active {
+  background: blue;
 }
