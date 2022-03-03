@@ -1,32 +1,19 @@
 import './App.css';
-
 import List from './List';
-
-const shoppingList = [
-  {
-    id: 0,
-    name: 'Eggs',
-    number: 12,
-    inCart: false,
-  },
-  {
-    id: 1,
-    name: 'Milk',
-    number: 8,
-    inCart: false,
-  },
-  {
-    id: 2,
-    name: 'Flour',
-    number: 1,
-    inCart: false,
-  },
-];
+import { itemDb } from './db.js';
+import { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState(itemDb);
+
+  function handleDeleteItem(ItemId) {
+    setItems(items.filter((item) => item._id !== ItemId));
+  }
+
   return (
     <>
       <h1>Shopping List</h1>
+      <List items={items} onDeleteItem={handleDeleteItem} />
     </>
   );
 }
