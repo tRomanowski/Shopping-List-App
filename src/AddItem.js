@@ -2,18 +2,18 @@ import './AddItem.css';
 import { useState } from 'react';
 
 export default function AddItem({ onAdd }) {
-  const [nameen, setNameen] = useState('');
+  const [nameEn, setNameEn] = useState('');
   return (
     <section className='addSection'>
       <input
         placeholder='Add article'
-        value={nameen}
-        onChange={(e) => setNameen(e.target.value)}
+        value={nameEn}
+        onChange={(e) => setNameEn(e.target.value)}
       ></input>
       <button
         onClick={() => {
-          setNameen('');
-          onAdd(nameen);
+          setNameEn('');
+          onAdd(nameEn);
         }}
       >
         Add

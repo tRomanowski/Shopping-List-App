@@ -13,15 +13,15 @@ function App() {
     setItems(items.filter((item) => item._id !== ItemId));
   }
 
-  function handleAdd(nameen) {
-    if (nameen !== '') {
+  function handleAdd(nameEn) {
+    if (nameEn !== '') {
       setItems([
         ...items,
         {
           _id: 'c2hvcHBpbmcuaXRlbTo5' + nextID++,
           _type: 'shopping.item',
           category: { _type: 'ref', _ref: 'c2hvcHBpbmcuY2F0ZWdvcnk6MA==' },
-          name: { en: nameen, de: '' },
+          name: { en: nameEn, de: '' },
         },
       ]);
     }
