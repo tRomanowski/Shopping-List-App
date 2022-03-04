@@ -1,0 +1,14 @@
+.addSection {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.addSection button {
+  border-radius: 15px;
+}
+
+.addSection input {
+  border-radius: 15px;
+}

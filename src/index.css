@@ -10,5 +10,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
-  background-color: gray;
+  background-color: #aaf0d1;
+  display: grid;
+  align-items: center;
+}
+
+#root {
+  padding: 15px;
+  max-width: 450px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
 }
