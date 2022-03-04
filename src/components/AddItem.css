@@ -8,3 +8,7 @@
 .addSection button {
   border-radius: 15px;
 }
+
+.addSection input {
+  border-radius: 15px;
+}

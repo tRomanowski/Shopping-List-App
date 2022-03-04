@@ -1,0 +1,8 @@
+.searchbar {
+  border-radius: 15px;
+}
+
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+}
