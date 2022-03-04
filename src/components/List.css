@@ -1,10 +1,11 @@
 .shopping-list {
   list-style: none;
   display: flex;
-  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   gap: 10px;
   padding: 10px;
-  overflow-x: auto;
   width: 100%;
 }
 

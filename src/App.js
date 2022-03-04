@@ -1,6 +1,6 @@
 import './App.css';
-import List from './List';
-import AddItem from './AddItem';
+import List from './components/List';
+import AddItem from './components/AddItem';
 import { itemDb } from './db.js';
 import { useState } from 'react';
 
