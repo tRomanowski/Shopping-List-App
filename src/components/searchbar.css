@@ -1,8 +1,28 @@
-.searchbar {
-  border-radius: 15px;
+.searchList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
 }
 
-.searchbar-container {
-  display: flex;
-  justify-content: center;
+.searchItem button {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #50bfe6;
+  border: none;
+  color: white;
+}
+
+.searchSection {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.searchSection input {
+  border-radius: 15px;
 }
