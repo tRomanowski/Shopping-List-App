@@ -1,14 +1,17 @@
 import './List.css';
 
-export default function List() {
+export default function List({ shoppingList, onDeleteItem }) {
   return (
     <ul className='shopping-list'>
-      <li className='shopping-list__item'>
-        <button>Platzhalter1</button>
-      </li>
-      <li className='shopping-list__item'>
-        <button>Platzhalter2</button>
-      </li>
+      {shoppingList.map((item) => {
+        return (
+          <li className='shopping-list__item' key={item._id}>
+            <button onClick={() => onDeleteItem(item._id)}>
+              {item.name.en}
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 }

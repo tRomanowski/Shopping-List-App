@@ -9,6 +9,9 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [items, setItems] = useState([]);
+  const [shoppingList, setShoppingList] = useState(
+    loadFromLocal('items') ?? []
+  );
 
   useEffect(() => {
     fetch('https://fetch-me.vercel.app/api/shopping/items')
@@ -20,24 +23,29 @@ function App() {
       });
   }, []);
 
-  // function loadFromLocal(key) {
-  //   try {
-  //     return JSON.parse(localStorage.getItem(key));
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  function loadFromLocal(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key));
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-  // function saveToLocal(key, data) {
-  //   localStorage.setItem(key, JSON.stringify(data));
-  // }
+  function saveToLocal(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+  }
 
-  // useEffect(() => {
-  //   saveToLocal('items', items);
-  // }, [items]);
+  useEffect(() => {
+    saveToLocal('items', shoppingList);
+  }, [shoppingList]);
+
+  function addToList(item) {
+    setShoppingList([...shoppingList, item]);
+    console.log(shoppingList);
+  }
 
   function handleDeleteItem(ItemId) {
-    setItems(items.filter((item) => item._id !== ItemId));
+    setShoppingList(shoppingList.filter((item) => item._id !== ItemId));
   }
   /* --->if an item shall be added manually<---
   function handleAdd(nameEn) {
@@ -58,8 +66,8 @@ function App() {
   return (
     <>
       <h1>Shopping List</h1>
-      <List onDeleteItem={handleDeleteItem} />
-      <Searchbar items={items} />
+      <List onDeleteItem={handleDeleteItem} shoppingList={shoppingList} />
+      <Searchbar items={items} onAddToList={addToList} />
       {/*<AddItem onAdd={handleAdd} />*/}
     </>
   );
